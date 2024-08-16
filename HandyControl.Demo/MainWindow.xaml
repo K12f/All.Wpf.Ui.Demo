@@ -8,6 +8,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" Style="{StaticResource ButtonPrimary}"></Button>
+
+      <StackPanel>
+        <TextBox Text="{Binding Name}" Style="{StaticResource TextBoxExtend}" Width="200" Height="100"></TextBox>
+        <Button Content="Button" Style="{StaticResource ButtonPrimary}" Command="{Binding SubmitCommand}"></Button>
+      </StackPanel>
     </Grid>
 </Window>
