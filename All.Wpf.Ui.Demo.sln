@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hosting.Demo", "Hosting.Dem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hosting.Wpf.Demo", "Hosting.Wpf.Demo\Hosting.Wpf.Demo.csproj", "{3438474C-4865-4DDE-82A6-FE4A5060F4E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyControl.Hosting.Template.Demo", "HandyControl.Hosting.Template.Demo\HandyControl.Hosting.Template.Demo.csproj", "{A054B1E3-6D6F-4ACD-A4D6-51F313CFEBDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{3438474C-4865-4DDE-82A6-FE4A5060F4E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3438474C-4865-4DDE-82A6-FE4A5060F4E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3438474C-4865-4DDE-82A6-FE4A5060F4E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A054B1E3-6D6F-4ACD-A4D6-51F313CFEBDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A054B1E3-6D6F-4ACD-A4D6-51F313CFEBDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A054B1E3-6D6F-4ACD-A4D6-51F313CFEBDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A054B1E3-6D6F-4ACD-A4D6-51F313CFEBDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
