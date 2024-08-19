@@ -16,6 +16,9 @@
     <ItemGroup>
       <PackageReference Include="CommunityToolkit.Mvvm" />
       <PackageReference Include="Microsoft.Extensions.Hosting" />
+      <PackageReference Include="Serilog" />
+      <PackageReference Include="Serilog.Extensions.Logging" />
+      <PackageReference Include="Serilog.Sinks.File" />
     </ItemGroup>
 
     <ItemGroup>
