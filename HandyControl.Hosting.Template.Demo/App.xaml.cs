@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
 
 using CommunityToolkit.Mvvm.Messaging;
 
@@ -62,8 +63,13 @@ namespace HandyControl.Hosting.Template.Demo
                         .CreateLogger();
                     logging.AddSerilog(Log.Logger);
                 })
-                .ConfigureServices(container =>
+                .ConfigureServices((context,container) =>
                 {
+                    // configuration
+
+                    var appConfig = context.Configuration.GetSection(nameof(AppConfig));
+                    container.Configure<AppConfig>(appConfig);
+                    
                     container.AddHostedService<CheckUpdateService>();
 
                     container.AddSingleton<MainViewModel>();

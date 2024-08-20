@@ -7,6 +7,7 @@ using HandyControl.Hosting.Template.Demo.Models;
 using HandyControl.Hosting.Template.Demo.Services;
 
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace HandyControl.Hosting.Template.Demo.ViewModels
 {
@@ -19,12 +20,13 @@ namespace HandyControl.Hosting.Template.Demo.ViewModels
 
         [ObservableProperty] private string? _logLevel;
         [ObservableProperty] private string _message;
+        [ObservableProperty] private string _appName;
 
-        public MainViewModel(IConfiguration configuration, Dispatcher dispatcher)
+        public MainViewModel(IConfiguration configuration, Dispatcher dispatcher,IOptions<AppConfig> settings)
         {
             _dispatcher = dispatcher;
             _logLevel = configuration.GetValue<string>("Logging:LogLevel:Microsoft");
-            _message = "_user.Name";
+            _message = settings.Value.Name;
 
 
         }

@@ -11,6 +11,7 @@
     <StackPanel>
       <TextBlock Text="{Binding Message}" />
       <TextBlock Text="{Binding LogLevel}" />
+      <TextBlock Text="{Binding AppName}" />
 
       <ContentControl Content="{Binding CurrentViewModel}">
         <ContentControl.Resources>
