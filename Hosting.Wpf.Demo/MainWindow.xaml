@@ -4,11 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hosting.Wpf.Demo"
+        xmlns:flwpf="clr-namespace:FlyleafLib.Controls.WPF;assembly=FlyleafLib.Controls.WPF"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance local:MainViewModel}"
         Title="MainWindow" Height="450" Width="800">
   <Grid>
+    <flwpf:FlyleafME Grid.Row="0" Grid.Column="0" Player="{Binding Player, Mode=OneWay}" x:Name="FlyleafME1" />
     <StackPanel>
+
       <TextBlock Text="{Binding Message}"></TextBlock>
       <TextBlock Text="{Binding LogLevel}"></TextBlock>
     </StackPanel>
