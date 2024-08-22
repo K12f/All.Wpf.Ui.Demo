@@ -23,8 +23,6 @@ namespace Hosting.Wpf.Demo
         [STAThread]
         private static void Main(string[] args)
         {
-    
-            
             using var host = CreateHostBuilder(args).Build();
             host.Start();
 

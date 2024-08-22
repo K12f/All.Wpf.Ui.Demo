@@ -20,32 +20,24 @@ public partial class MainWindow : Window
 {
     public MainWindow()
     {
+        // Initializes Engine (Specifies FFmpeg libraries path which is required)
         Engine.Start(new EngineConfig()
         {
-            FFmpegPath = ":FFmpeg",
-            FFmpegDevices =
-                false, // Prevents loading avdevice/avfilter dll files. Enable it only if you plan to use dshow/gdigrab etc.
-
-#if RELEASE
-                            FFmpegLogLevel = FFmpegLogLevel.Quiet,
-                            LogLevel = LogLevel.Quiet,
-
-#else
-            FFmpegLogLevel = FFmpegLogLevel.Warning,
-            LogLevel = (FlyleafLib.LogLevel)LogLevel.Debug,
-            LogOutput = ":debug",
-            //LogOutput         = ":console",
-            //LogOutput         = @"C:\Flyleaf\Logs\flyleaf.log",                
+#if DEBUG
+            LogOutput       = ":debug",
+            LogLevel        = LogLevel.Debug,
+            FFmpegLogLevel  = FFmpegLogLevel.Warning,
 #endif
+                
+            PluginsPath     = ":Plugins",
+            FFmpegPath      = ":FFmpeg",
 
-            //PluginsPath       = @"C:\Flyleaf\Plugins",
-
-            UIRefresh =
-                false, // Required for Activity, BufferedDuration, Stats in combination with Config.Player.Stats = true
-            UIRefreshInterval = 250, // How often (in ms) to notify the UI
-            UICurTimePerSecond =
-                true, // Whether to notify UI for CurTime only when it's second changed or by UIRefreshInterval
+            // Use UIRefresh to update Stats/BufferDuration (and CurTime more frequently than a second)
+            UIRefresh       = true,
+            UIRefreshInterval= 100,
+            UICurTimePerSecond = false // If set to true it updates when the actual timestamps second change rather than a fixed interval
         });
+
         InitializeComponent();
     }
 }
